@@ -1,0 +1,61 @@
+
+         .btn {background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%)}
+         .btn {
+          
+            padding: 10px 20px;
+            text-align: center;
+           
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 20px;
+            border: none;
+            margin: 1rem 1rem 1rem 0;
+         
+          }
+.container,
+.star-container{
+    text-align: left;
+}
+h2{
+  color: rgba(0, 0, 0, 0.63);
+}
+          .btn:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+          }
+    .star-container{
+      position: fixed;
+      top:320px;
+      width: 200px;
+    }
+    .container{
+      position: sticky;
+      top:100px;
+      width: 200px;
+    }
+         .star-container li{
+             border: 1px solid rgba(91, 59, 196, 0.281);
+             width: 80px;
+             height: 30px;
+             margin: 1em 1em 1em 0;
+             text-align: center;
+             border-radius: 20px;
+             display: inline-block;
+             cursor: pointer;
+             
+         }
+         .star-container li:hover{
+           border: #8E54E9 solid 1.5px;
+           box-shadow: 0  1px 10px #8E54E9 ;
+         }
+         .filter-container{
+         display: flex;
+         flex-direction: column ;
+         gap: 2em;
+           padding: 1em;
+         
+         }

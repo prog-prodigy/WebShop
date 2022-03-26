@@ -1,0 +1,116 @@
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100vh;
+  align-items: center;
+  flex-direction: row;
+  gap: 2em;
+  background: rgb(239, 248, 248);
+  color: rgb(75, 72, 72);
+  animation: transitionIn 1s;
+}
+.email,
+.pass {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  position: relative;
+}
+.form-box {
+  height: 400px;
+  width: 300px;
+  background: #f0f0f0fd;
+  box-shadow: 0 8px 15px 0 rgba(67, 69, 105, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 20px;
+  padding: 1em;
+  color: rgb(75, 72, 72);
+}
+.form-box:hover{
+    box-shadow: 0 8px 22px 0 rgba(67, 69, 105, 0.37);
+}
+.form-title {
+  text-align: center;
+  margin-bottom: 1.3em;
+}
+.lemail,
+.lpass {
+  height: 40px;
+}
+input {
+  border: #fff 1px solid;
+  padding-left: 40px;
+  transition: border-color 200ms;
+  border-radius: 5px;
+}
+input:hover {
+  border-color: rgb(139, 137, 137);
+}
+label {
+  padding-left: 3px;
+  padding-bottom: 5px;
+}
+.eicon,
+.picon {
+  position: absolute;
+  left: 10px;
+  bottom: 13px;
+}
+.intro {
+  text-align: center;
+}
+.intro-text {
+  text-align: center;
+}
+
+.btn-grad {background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%)}
+.btn-grad {
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+   border: none;
+   margin: auto;
+   margin-top: 30px;
+   height: 42px ;
+ }
+
+ .btn-grad:hover {
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
+   cursor: pointer;
+ }
+ p{
+   text-align: center;
+   font-weight: 100;
+   text-decoration: none;
+   font-size:90%;
+ }
+ a{
+   text-decoration: none;
+   padding-left: 2px;
+ }
+
+@keyframes transitionIn{
+  from{
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to{
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+.passState-icon{
+  position: absolute;
+  top: 40px;
+  right:3px;
+  font-size: small;
+}

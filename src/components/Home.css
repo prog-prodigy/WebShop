@@ -1,0 +1,25 @@
+.header {
+  background: rgba(236, 236, 236, 0.829);
+backdrop-filter: blur(8px);
+z-index: 1;
+  color: black;
+  font-family: sans-serif;
+  position: sticky;
+  top:0px;
+  box-sizing: border-box;
+
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.right-nav {
+  display: flex;
+  gap: 1em;
+}
+.user{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
