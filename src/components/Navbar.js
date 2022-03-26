@@ -15,6 +15,8 @@ import Cart from "./Cart/Cart";
 import { cartActions } from "./store/cartSlice";
 
 const Navbar = ({user}) => {
+  
+  const cartQuantity= useSelector(state=> state.cart.totalQuantity)
   const showCart = useSelector(state=> state.cart.showCart)
   const dispatchCart = useDispatch()
   const handleCart=()=>{
@@ -44,7 +46,7 @@ const Navbar = ({user}) => {
 
 
           {!showCart ?  <button className="btn" onClick={handleCart}>
-            <FontAwesomeIcon icon={faCartArrowDown} /> Cart 
+            <FontAwesomeIcon icon={faCartArrowDown} /> Cart items: {cartQuantity}
           </button> :  <button className="btn" onClick={handleCart}>
             <FontAwesomeIcon icon={faHome} /> Home 
           </button>}

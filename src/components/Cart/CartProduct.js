@@ -1,22 +1,50 @@
-import React from 'react'
-import image1 from '../../images/shoe.jpg'
-import './CartProduct.css'
-const CartProduct = () => {
+import React from "react";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../store/cartSlice";
+import "./CartProduct.css";
+const CartProduct = ({ name, id, price, totalPrice, quantity, image }) => {
+  const dispatch = useDispatch();
   return (
-    <div className='cart-product'>
-        <div className='cart-product-img'>
-            <img src={image1} className='productimage' alt='productimage'/>
-        </div>
-        <div className='cart-product-details'>
-        <h2>Product: Name</h2>
-           
-                <p>quantity: 1</p>
-                <p>Price: 1000</p>
-                <p>Total price: 1000</p>
-            
-        </div>
-    </div>
-  )
-}
+    <div className="cart-product">
+      <div className="cart-product-img">
+        <img src={image} className="productimage" alt="productimage" />
+      </div>
+     <div className='Details'>
+     <div className="cart-product-details">
+        <h2>{name}</h2>
 
-export default CartProduct
+        <div className='CartProductList'>
+        <p>quantity: {quantity}</p>
+        <p>Price: {price}</p>
+        <p>Total price: {totalPrice}</p>
+        </div>
+      </div>
+      <div className="CartButtons">
+        <button
+          className="addbtn"
+          onClick={() =>
+            dispatch(
+              cartActions.addToCart({
+                name,
+                id,
+                price,
+                image,
+              })
+            )
+          }
+        >
+          Add item
+        </button>
+        <button
+          className="removebtn"
+          onClick={() => dispatch(cartActions.removeFromCart(id))}
+        >
+          Remove item
+        </button>
+      </div>
+     </div>
+    </div>
+  );
+};
+
+export default CartProduct;

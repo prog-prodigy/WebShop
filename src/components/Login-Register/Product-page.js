@@ -63,8 +63,7 @@ function Product() {
       );
     }
   }, [all, checkCategory, checkRating, filter]);
-  const logItem= useSelector(state=> state.cart.itemsList)
-console.log(logItem)
+ 
   return (
     <div className="main-page">
       <Filter

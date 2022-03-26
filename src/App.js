@@ -22,7 +22,7 @@ function App() {
   };
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const ShowCart = useSelector((state) => state.cart.showCart);
-  console.log(ShowCart);
+  
   if (ShowCart && isLoggedIn && user) {
     return <Cart />;
   } else if (isLoggedIn && user?.email) {

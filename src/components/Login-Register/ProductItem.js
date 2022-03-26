@@ -1,18 +1,29 @@
 import "./Product.css";
 import { motion } from "framer-motion";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../store/cartSlice";
 
 const ProductItem = ({ item }) => {
+  
+  const showRemoveBtn = useSelector(state => state.cart.itemsList) 
+  // const getIds= showRemoveBtn.map(item=> item.id)  
+
     const dispatch=useDispatch()
     const addItem=()=>{
         dispatch(cartActions.addToCart({
             name: item.name,
             id:item.id,
-            price:item.price
+            price:item.price,
+            image: item.image
         }))
+        
     }
+    const removeItem=()=>{
+      dispatch(cartActions.removeFromCart(item.id))
+
+    }
+ 
   return (
     <div className="box">
       <motion.div
@@ -24,12 +35,16 @@ const ProductItem = ({ item }) => {
       >
         <img className="img" src={item.image} alt={item.name} />
       </motion.div>
+      <h2 className="product-title">{item.name}</h2>
       <div className="description">
-        <h2>{item.name}</h2>
-        <p>Rs. {item.price}</p>
-        <p>Rating: {item.rating}</p>
+       
+        <span>Rs. {item.price}</span>
+        <span>Rating: {item.rating}</span>
       </div>
-      <button onClick={addItem}>Add to Cart</button>
+    <div className="Cartbtn">
+    <button className="addbtn" onClick={addItem}>Add item</button>
+     <button className="removebtn" onClick={removeItem}>Remove item </button> 
+    </div>
     </div>
   );
 };
