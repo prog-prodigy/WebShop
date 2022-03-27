@@ -114,3 +114,11 @@ label {
   right:3px;
   font-size: small;
 }
+.changeFormText{
+  margin-top:1em;
+}
+.changeFormText span{
+  margin-top:1em;
+  cursor: pointer;
+  padding-left: 2px;
+}

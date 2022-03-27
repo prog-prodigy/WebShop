@@ -47,6 +47,7 @@ const Form = (props) => {
             />
             <FontAwesomeIcon icon={faEnvelope} className="eicon" />
           </div>
+          
           <div className="pass">
             <label htmlFor="lpass">Password</label>
             <input
@@ -63,7 +64,8 @@ const Form = (props) => {
             <FontAwesomeIcon icon={faLock} className="picon" />
           </div>
           <button className="btn-grad"> Login</button>
-          <p>Don't have an account?<span onClick={props.changeForm}>Sign up</span></p>
+          <p className='changeFormText'>Don't have an account?<span onClick={props.changeForm}>Sign up</span></p>
+          <p style={{color:'red'}}>{props.error}</p>
         </div>
       </div>
     </form>

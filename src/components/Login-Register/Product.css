@@ -10,7 +10,7 @@
   margin-bottom: 1rem;
   box-sizing: border-box;
 
-  transition: transform 300ms;
+ 
   /* margin: auto; */
 }
 .product-grid {
@@ -24,8 +24,10 @@
   padding: 10px;
   border-radius: 10px;
   max-width: 200px;
+  border: 1px solid rgba(128, 128, 128, 0.164);
+  transition: transform 300ms;
 }
-.img-box:hover {
+.box:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.507);
 }
@@ -50,7 +52,7 @@
   .addbtn {
     margin-top: 5px;
 
-     padding: 0px 12px;
+     padding: 10px 20px;
      text-align: center;
      /* text-transform: uppercase; */
      transition: 0.5s;
@@ -58,9 +60,9 @@
      color: rgb(0, 0, 0);            
      /* box-shadow: 0 0px 5px rgb(97, 96, 96); */
      border-radius: 10px;
-     border: 1px solid gray;
+     /* border: 1px solid gray; */
      background-color: white;
-    
+    border: none;
     
    }
 
@@ -73,10 +75,10 @@
      border:none;
    }
    
-   .removebtn {}
+   
    .removebtn {
       margin-top: 5px;
-      padding: 10px 10px;
+      padding: 10px 20px;
       text-align: center;
       /* text-transform: uppercase; */
       transition: 0.5s;
@@ -86,7 +88,7 @@
       border-radius: 10px;
       border: 1px solid gray;
       background-color: white;
-      
+      border: none;
      
     }
 

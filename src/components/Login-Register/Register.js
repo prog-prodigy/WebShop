@@ -6,7 +6,7 @@ import {
   faEye,
   faEyeLowVision,
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./form.css";
 import image from "../../images/SHOPPING.png";
 import {createUserWithEmailAndPassword} from '@firebase/auth'
@@ -17,7 +17,8 @@ import { authActions } from "../store/authSlice";
 const Register = (props) => {
   const email = useRef();
   const password = useRef();
-  const [pstate, setPstate] = React.useState(true);
+  const [pstate, setPstate] = useState(true);
+  const [error,setErrorMsg] = useState('')
   const dispatch= useDispatch()
   const reg = async (e) => {
     e.preventDefault()
@@ -27,7 +28,7 @@ const Register = (props) => {
           console.log('done')
           dispatch(authActions.login())
         }catch(err){
-          console.log(err.message)
+          setErrorMsg(err.message)
         }
   };
 
@@ -74,7 +75,8 @@ const Register = (props) => {
             <FontAwesomeIcon icon={faLock} className="picon" />
           </div>
           <button className="btn-grad"> Register</button>
-          <p>Have an account? <span onClick={props.changeForm}>Sign in</span></p>
+          <p className="changeFormText">Have an account? <span onClick={props.changeForm}>Sign in</span></p>
+          <p style={{color:'red'}}>{error}</p>
         </div>
       </div>
     </form>

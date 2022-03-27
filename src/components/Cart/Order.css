@@ -1,0 +1,29 @@
+.body{
+    /* background-color: black; */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+.orderplaced-box{
+    position: absolute;
+box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.164);
+border: 1px solid rgba(128, 128, 128, 0.212);
+border-radius: 20px;
+width: 350px;
+height: 200px;
+padding:2em 0.5em;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+top: 100px;
+right: 50%;
+left: 35%;
+}
+.truck{
+    transform: scale(1.05);
+    color: #8559e9;
+    /* display: inline; */
+
+}

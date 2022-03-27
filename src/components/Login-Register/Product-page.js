@@ -70,7 +70,7 @@ function Product() {
         category={changeProductByCategory}
         rating={changeProductByRating}
       />
-      <motion.div l className="product-grid">
+      <motion.div  className="product-grid">
         {product.length ? productData : <h1 className="no-items">No items found</h1>}
       </motion.div>
     </div>

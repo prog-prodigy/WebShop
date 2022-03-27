@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar";
 import CartProduct from "./CartProduct";
 import './Cart.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import OrderPlaced from "./OrderPlaced";
+import { cartActions } from "../store/cartSlice";
 
 const Cart = () => {
-  const logItem= useSelector(state=> state.cart.itemsList)
-  const renderProduct = logItem.map(item=>{
-    return <CartProduct image={item.image} name={item.name} id={item.id} quantity={item.quantity} price={item.price} totalPrice={item.totalPrice}/>
-  })
+  const [order,setOrder]=useState(false)
+const dispatch= useDispatch()
+  const logItem= useSelector(state=> state.cart.totalQuantity)
+  const getitem = useSelector(state=> state.cart.itemsList)
+  console.log(logItem)
+  if(logItem){
+
+    var renderProduct = getitem.map(item=>{
+      return <CartProduct image={item.image} name={item.name} id={item.id} quantity={item.quantity} price={item.price} totalPrice={item.totalPrice}/>
+    })
+  }else{
+    renderProduct= <h1 className="emptyCart">No items in your Cart</h1>
+  }
 const totalQuantity= useSelector(state=> state.cart.totalQuantity)
  if(logItem.length){
   var priceArray= logItem.map(item=> item.totalPrice)
@@ -25,13 +36,16 @@ const totalQuantity= useSelector(state=> state.cart.totalQuantity)
   discount = '--'
   finalPrice = '--'
  }
-
+const setOrderPage=()=>{
+  setOrder(true)
+  dispatch(cartActions.emptyCart())
+}
   return (
     <>
       <Navbar />
-      <div className="cart-container">
+    {order ?   <OrderPlaced setOrder={setOrder} />:  <div className="cart-container">
         <div className="cart-box">
-          {logItem.length ? renderProduct : <h1 className="emptyCart">No items in your Cart</h1>}
+          {renderProduct}
           
         </div>
         <div className="order-box">
@@ -50,9 +64,11 @@ const totalQuantity= useSelector(state=> state.cart.totalQuantity)
             <h1>Rs {finalPrice}</h1>
           </div>
          </div>
-        <div><button className="cart-btn"><FontAwesomeIcon icon={faBagShopping}/> Place Order</button></div>
+        <div>{!logItem ? <button disabled style={{cursor:'not-allowed'}}  className="cart-btn">Cart Empty</button>:
+       <button onClick={setOrderPage } className="cart-btn"><FontAwesomeIcon icon={faBagShopping}/> Place Order</button>}</div>
         </div>
-      </div>
+      </div>}
+     
     </>
   );
 };

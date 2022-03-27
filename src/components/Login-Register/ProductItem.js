@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../store/cartSlice";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faShoppingBag, faTrashCan} from '@fortawesome/free-solid-svg-icons'
 
 const ProductItem = ({ item }) => {
   
@@ -42,8 +44,8 @@ const ProductItem = ({ item }) => {
         <span>Rating: {item.rating}</span>
       </div>
     <div className="Cartbtn">
-    <button className="addbtn" onClick={addItem}>Add item</button>
-     <button className="removebtn" onClick={removeItem}>Remove item </button> 
+    <button className="addbtn" onClick={addItem}><FontAwesomeIcon icon={faShoppingBag}/> Add</button>
+     <button className="removebtn" onClick={removeItem}><FontAwesomeIcon icon={faTrashCan}/>Remove</button> 
     </div>
     </div>
   );

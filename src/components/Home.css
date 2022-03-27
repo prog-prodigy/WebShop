@@ -1,8 +1,8 @@
 .header {
-  background: rgba(236, 236, 236, 0.829);
+  background: rgba(111, 71, 168, 0.726);
 backdrop-filter: blur(8px);
 z-index: 1;
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: sans-serif;
   position: sticky;
   top:0px;

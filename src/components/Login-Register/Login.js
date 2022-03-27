@@ -9,6 +9,7 @@ import { authActions } from "../store/authSlice";
 const Login = (props) => {
  const [email,setEmail] =  useState()
  const [password,setPassword] =  useState()
+ const [errorMsg,setErrorMsg]= useState('')
 const dispatch = useDispatch()
 const login= async({email,password})=>{
   setEmail(email)
@@ -18,14 +19,14 @@ try{
    console.log('success')
    dispatch(authActions.login())
  }catch(error){
-   console.log(error)
+   setErrorMsg(error.message)
  }
 }
 
 
   return (
     <>
-     <Form  login={login} changeForm={props.changeForm}/>
+     <Form error={errorMsg}  login={login} changeForm={props.changeForm}/>
     </>
   );
 };
