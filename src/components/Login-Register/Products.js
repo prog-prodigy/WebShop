@@ -79,7 +79,7 @@ export const ProductData = [
   {
     id: 7,
     image: image7,
-    name: "model1",
+    name: "t-shirt",
     price: 1230,
     rating: "4⭐",
     quantity: 1,
@@ -88,7 +88,7 @@ export const ProductData = [
   {
     id: 8,
     image: image8,
-    name: "model2",
+    name: "t-shirt",
     price: 7200,
     rating: "1⭐",
     quantity: 1,
@@ -115,7 +115,7 @@ export const ProductData = [
   {
     id: 11,
     image: image11,
-    name: "kid",
+    name: "kid wear",
     price: 4200,
     rating: "3⭐",
     quantity: 1,

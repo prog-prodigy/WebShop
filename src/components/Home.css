@@ -6,7 +6,11 @@ z-index: 1;
   font-family: sans-serif;
   position: sticky;
   top:0px;
+  left: 0px;
+  right: 0px;
+  padding-left:4em ;
   box-sizing: border-box;
+  height: 65px;
 
 }
 .navbar {

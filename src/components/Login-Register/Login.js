@@ -18,6 +18,7 @@ try{
    const user = await signInWithEmailAndPassword(authfirebase, email, password)
    console.log('success')
    dispatch(authActions.login())
+   
  }catch(error){
    setErrorMsg(error.message)
  }
@@ -26,7 +27,7 @@ try{
 
   return (
     <>
-     <Form error={errorMsg}  login={login} changeForm={props.changeForm}/>
+     <Form error={errorMsg} user={props.user}  login={login} changeForm={props.changeForm}/>
     </>
   );
 };

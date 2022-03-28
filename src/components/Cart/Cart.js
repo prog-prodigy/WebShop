@@ -23,8 +23,8 @@ const dispatch= useDispatch()
     renderProduct= <h1 className="emptyCart">No items in your Cart</h1>
   }
 const totalQuantity= useSelector(state=> state.cart.totalQuantity)
- if(logItem.length){
-  var priceArray= logItem.map(item=> item.totalPrice)
+ if(logItem){
+  var priceArray= getitem.map(item=> item.totalPrice)
   var totalPriceData = priceArray.reduce((acc,ins)=>{
     return acc+ins
   })

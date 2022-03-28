@@ -35,17 +35,6 @@ const Register = (props) => {
   return (
     <form onSubmit={reg}>
       <div className="form-container">
-        <div className="Intro">
-          <div className="intro-text">
-            <h1>
-      Join
-              <FontAwesomeIcon icon={faCartShopping} />
-              FakeCart
-            </h1>
-            <p>The One-stop Shopping Destination</p>
-          </div>
-          <img src={image} alt="Shopping" />
-        </div>
         <div className="form-box">
           <h1 className="form-title">Sign up</h1>
           <div className="email">
@@ -77,6 +66,17 @@ const Register = (props) => {
           <button className="btn-grad"> Register</button>
           <p className="changeFormText">Have an account? <span onClick={props.changeForm}>Sign in</span></p>
           <p style={{color:'red'}}>{error}</p>
+        </div>
+        <div className="Intro">
+          <div className="intro-text">
+            <h1>
+        Join
+              <FontAwesomeIcon icon={faCartShopping} />
+              FakeCart
+            </h1>
+            <p>The One-stop Shopping Destination</p>
+          </div>
+          <img src={image} alt="Shopping" />
         </div>
       </div>
     </form>
